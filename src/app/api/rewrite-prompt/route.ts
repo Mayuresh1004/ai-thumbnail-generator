@@ -55,10 +55,7 @@ You are a professional YouTube thumbnail designer. Create a detailed, specific p
 - Visual elements that support the "${mood}" mood
 - Space reserved for subject placement on the ${placement}
 - Style inspired by trending YouTube thumbnails for gaming/tech/lifestyle
-- U can also change the outfit of the subject to make it more appealing and relevant to the video content.
-- Always add the photo given by the user in the prompt, give it a special attention.
-- u can search and add logo of the brand in the prompt, give it a special attention.
-- u can also add some background if needed
+- U can also change the outfit of the subject to make it more appealing and relevant to the video content
 
 You can also use following design aspects:
 -"cinematic lighting with strong shadows"
@@ -74,12 +71,7 @@ Create a detailed prompt that describes the background, lighting, composition, a
 The thumbnail should convey: ${mood} energy and be suitable for ${type} content.
 Style direction: ${style}
 
-Make the prompt detailed and specific, focusing on visual elements, lighting, and composition.
-Example:
-Prompt is to create a photo of a person  with video title travel volg of paris
-Rewritten prompt: Create a photo of a person wearing travel clothes, with a background of Paris, and the title "Travel Volg of Paris" in bold, readable text areas.
-
-`;
+Make the prompt detailed and specific, focusing on visual elements, lighting, and composition.`;
 
     const response = await openai.chat.completions.create({
       model: "gemini-2.5-flash",

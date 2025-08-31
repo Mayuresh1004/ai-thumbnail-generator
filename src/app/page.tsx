@@ -88,9 +88,9 @@ export default function ThumbnailGenerator() {
     );
 
     const res = await fetch("/api/generate-thumbnail", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ 
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
         prompt, 
         images: base64Images,
         model: "google/gemini-2.5-flash-image-preview:free",
@@ -354,7 +354,7 @@ export default function ThumbnailGenerator() {
     <div className="min-h-screen bg-black text-white p-6">
       <h1 className="text-3xl font-bold mb-2 text-blue-400">AI Thumbnail Generator</h1>
       <p className="text-neutral-400 mb-6">
-        Upload your photo, describe your video, choose placement, and get multiple thumbnail options. Each style generates 16:9 (landscape) version.
+        Upload your photo, describe your video, choose placement, and get multiple thumbnail options. Each style generates both 16:9 (landscape) and 9:16 (portrait) versions.
       </p>
 
       <div className="grid grid-cols-2 gap-6">
@@ -391,12 +391,12 @@ export default function ThumbnailGenerator() {
                         alt={`upload-${index}`}
                         className="rounded-lg w-full h-24 object-cover border border-neutral-700"
                       />
-                      <button
+      <button
                         onClick={() => handleRemovePhoto(index)}
                         className="absolute top-1 right-1 bg-black/70 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
-                      >
+      >
                         <X size={14} />
-                      </button>
+      </button>
                     </div>
                   ))}
                 </div>
@@ -453,7 +453,7 @@ export default function ThumbnailGenerator() {
 
             {/* Mood / Angle */}
             <div>
-              <label className="block mb-1 text-blue-300">Mood / Angle(u can also describe the thumbnail you want)</label>
+              <label className="block mb-1 text-blue-300">Mood / Angle</label>
               <Textarea 
                 placeholder="e.g., Excited, Urgent, Calm — include keywords you'd like" 
                 className="bg-neutral-800 border-neutral-600 text-white placeholder-neutral-500 min-h-20"
@@ -474,7 +474,7 @@ export default function ThumbnailGenerator() {
                 className="bg-neutral-800 border-neutral-600 text-white" 
               />
               <p className="text-xs text-neutral-400 mt-1">
-                We'll generate  16:9 Thumbnail.
+                We'll generate both 16:9 and 9:16 for each style.
               </p>
             </div>
 
